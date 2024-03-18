@@ -21,6 +21,7 @@
     "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@types/node": "^20.11.29",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -38,6 +39,7 @@
     "eslint-plugin-sonarjs": "^0.24.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "path": "^0.12.7",
     "postcss": "^8.4.35",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
