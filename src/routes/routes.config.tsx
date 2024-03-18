@@ -1,5 +1,5 @@
+import { RouteIdEnum } from '@/config/enums/routes.enum';
 import { RouteObject } from 'react-router-dom';
-import { RouteIdEnum } from '../config/enums/routes.enum';
 
 export const RoutesConfig: RouteObject[] = [
   {
