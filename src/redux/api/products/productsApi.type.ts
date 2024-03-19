@@ -1,6 +1,6 @@
 import { Paginator } from '@/types/interfaces';
 
-export type GetAllProductsParams = { paginator: Paginator };
+export type GetAllProductsParams = { paginator: Partial<Paginator> };
 
 export type CreateProduct = {
   title?: string;

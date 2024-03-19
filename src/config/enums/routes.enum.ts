@@ -4,4 +4,6 @@ export enum RouteIdEnum {
   NotFound = '404',
   id = ':id',
   Home = 'home',
+  Products = 'products',
+  Product = 'product/:id',
 }
