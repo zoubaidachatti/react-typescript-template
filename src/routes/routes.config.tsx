@@ -1,4 +1,6 @@
-import { RouteIdEnum } from '@/config/enums/routes.enum';
+import { RouteIdEnum } from '@/config/enums';
+import ProductsPage from '@/pages/ProductsPage/ProductsPage';
+import ViewProductPage from '@/pages/ViewProductPage/ViewProductPage';
 import { RouteObject } from 'react-router-dom';
 
 export const RoutesConfig: RouteObject[] = [
@@ -11,5 +13,13 @@ export const RoutesConfig: RouteObject[] = [
     path: RouteIdEnum.Home,
     // TODO
     element: <>🏠</>,
+  },
+  {
+    path: RouteIdEnum.Products,
+    element: <ProductsPage />,
+  },
+  {
+    path: RouteIdEnum.Product,
+    element: <ViewProductPage />,
   },
 ];
