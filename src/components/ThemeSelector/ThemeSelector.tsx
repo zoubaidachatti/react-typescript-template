@@ -6,7 +6,7 @@ import { SvgContainer } from '@/components/ThemeSelector/ThemeSelector.styles';
 import { AppModeEnum, AppThemeEnum } from '@/config/enums';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setTheme, switchMode } from '@/redux/slices/app/appSlice';
-import { Collapse, Stack, Tooltip } from '@mui/material';
+import { Collapse, SimplePaletteColorOptions, Stack, Tooltip } from '@mui/material';
 import { useState } from 'react';
 
 export default function ThemeSelector() {
@@ -58,7 +58,7 @@ export default function ThemeSelector() {
                   height={'40px'}
                   width={'40px'}
                   borderRadius={'5px'}
-                  bgcolor={theme.lightTheme.palette?.primary?.main}
+                  bgcolor={(theme.lightTheme.palette?.primary as SimplePaletteColorOptions).main}
                 />
               </Tooltip>
             ))}
