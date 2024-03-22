@@ -15,22 +15,50 @@ import {
   SunsetRedTheme,
 } from '@/theme//themes.light';
 import { ThemeOptions } from '@mui/material';
+import { AppThemeEnum } from '@/config/enums';
 
 export type AppTheme = {
-  name: string;
+  darkThemeName: AppThemeEnum;
+  lightThemeName: AppThemeEnum;
   lightTheme: ThemeOptions;
   darkTheme: ThemeOptions;
 };
 
 export const themes: AppTheme[] = [
-  { name: 'Default', lightTheme: DefaultTheme, darkTheme: DefaultDarkTheme },
-  { name: 'ForestGreen', lightTheme: ForestGreenTheme, darkTheme: ForestGreenDarkTheme },
   {
-    name: 'MidnightPurple',
+    lightThemeName: AppThemeEnum.Default,
+    darkThemeName: AppThemeEnum.DefaultDark,
+    lightTheme: DefaultTheme,
+    darkTheme: DefaultDarkTheme,
+  },
+  {
+    lightThemeName: AppThemeEnum.ForestGreen,
+    darkThemeName: AppThemeEnum.ForestGreenDark,
+    lightTheme: ForestGreenTheme,
+    darkTheme: ForestGreenDarkTheme,
+  },
+  {
+    lightThemeName: AppThemeEnum.MidnightPurple,
+    darkThemeName: AppThemeEnum.MidnightPurpleDark,
     lightTheme: MidnightPurpleTheme,
     darkTheme: MidnightPurpleDarkTheme,
   },
-  { name: 'OceanBlue', lightTheme: OceanBlueTheme, darkTheme: OceanBlueDarkTheme },
-  { name: 'RoyalGold', lightTheme: RoyalGoldTheme, darkTheme: RoyalGoldDarkTheme },
-  { name: 'SunsetRed', lightTheme: SunsetRedTheme, darkTheme: SunsetRedDarkTheme },
+  {
+    lightThemeName: AppThemeEnum.OceanBlue,
+    darkThemeName: AppThemeEnum.OceanBlueDark,
+    lightTheme: OceanBlueTheme,
+    darkTheme: OceanBlueDarkTheme,
+  },
+  {
+    lightThemeName: AppThemeEnum.RoyalGold,
+    darkThemeName: AppThemeEnum.RoyalGoldDark,
+    lightTheme: RoyalGoldTheme,
+    darkTheme: RoyalGoldDarkTheme,
+  },
+  {
+    lightThemeName: AppThemeEnum.SunsetRed,
+    darkThemeName: AppThemeEnum.SunsetRedDark,
+    lightTheme: SunsetRedTheme,
+    darkTheme: SunsetRedDarkTheme,
+  },
 ];

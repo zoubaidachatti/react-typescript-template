@@ -7,7 +7,11 @@ import { useMemo } from 'react';
 
 function App() {
   const appConfig = useAppSelector((state) => state.appReducer);
-  const theme = useMemo(() => generateTheme(appConfig.theme), [appConfig.theme, appConfig.mode]);
+  const theme = useMemo(
+    () => generateTheme(appConfig.theme, appConfig.mode),
+    [appConfig.theme, appConfig.mode],
+  );
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

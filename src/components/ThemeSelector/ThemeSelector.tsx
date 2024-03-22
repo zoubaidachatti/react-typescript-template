@@ -1,69 +1,70 @@
-import { AppTheme, themes } from '@/components/ThemeSelector/ThemeSelector.constants';
+import DarkModeIcon from '@/assets/icons/dark-mode.svg?react';
+import LightModeIcon from '@/assets/icons/light-mode.svg?react';
+import ThemeIcon from '@/assets/icons/theme.svg?react';
+import { themes } from '@/components/ThemeSelector/ThemeSelector.constants';
+import { SvgContainer } from '@/components/ThemeSelector/ThemeSelector.styles';
+import { AppModeEnum, AppThemeEnum } from '@/config/enums';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { setTheme, switchMode } from '@/redux/slices/app/appSlice';
 import { Collapse, Stack, Tooltip } from '@mui/material';
 import { useState } from 'react';
-import ThemeIcon from '@/assets/icons/theme.svg?react';
 
 export default function ThemeSelector() {
-  const [clickedTheme, setClickedTheme] = useState<AppTheme>();
-  const [showModePicker, setShowModePicker] = useState<boolean>(false);
   const [toggleTheme, setToggleTheme] = useState<boolean>(false);
 
-  const setTheme = (_theme?: unknown) => {
+  const appMode = useAppSelector((state) => state.appReducer.mode);
+  const appTheme = useAppSelector((state) => state.appReducer.theme);
+
+  const dispatch = useAppDispatch();
+
+  const selectTheme = (theme: AppThemeEnum) => {
     setToggleTheme(false);
-    setShowModePicker(false);
+    dispatch(setTheme({ theme }));
   };
+  const switchAppMode = () => {
+    dispatch(switchMode());
+    dispatch(setTheme({ theme: appTheme }));
+  };
+
   return (
-    <>
-      <Stack direction="row" alignItems={'center'} marginLeft={'auto'} spacing={1}>
-        {!toggleTheme && <ThemeIcon onClick={() => setToggleTheme(true)}></ThemeIcon>}
-        {toggleTheme && (
-          <Stack direction={'column'} spacing={1}>
-            <Stack direction="row" spacing={1}>
-              {themes.map((theme, key) => (
-                <Tooltip
-                  key={key}
-                  title={theme.name}
-                  onClick={() => {
-                    if (showModePicker) {
-                      setShowModePicker(false);
-                    } else {
-                      setShowModePicker(true);
-                    }
-                    setClickedTheme(theme);
-                  }}
-                >
-                  <Stack
-                    height={'40px'}
-                    width={'40px'}
-                    borderRadius={'5px'}
-                    bgcolor={theme.lightTheme.palette?.primary?.main}
-                  ></Stack>
-                </Tooltip>
-              ))}
-            </Stack>
-            <Collapse in={showModePicker}>
-              <Stack direction="row" spacing={1.2}>
-                <Tooltip title="light" onClick={() => setTheme()}>
-                  <Stack
-                    height={'40px'}
-                    width={'135px'}
-                    borderRadius={'5px'}
-                    bgcolor={clickedTheme?.lightTheme.palette?.primary?.light}
-                  ></Stack>
-                </Tooltip>
-                <Tooltip title="dark" onClick={() => setTheme()}>
-                  <Stack
-                    height={'40px'}
-                    width={'135px'}
-                    borderRadius={'5px'}
-                    bgcolor={clickedTheme?.lightTheme.palette?.primary?.dark}
-                  ></Stack>
-                </Tooltip>
-              </Stack>
-            </Collapse>
+    <Stack direction="row" marginLeft={'auto'} alignItems={'center'} spacing={1}>
+      <Tooltip
+        title={appMode === AppModeEnum.Dark ? AppModeEnum.Light : AppModeEnum.Dark}
+        onClick={switchAppMode}
+      >
+        <SvgContainer>
+          {appMode === AppModeEnum.Dark ? <LightModeIcon /> : <DarkModeIcon />}
+        </SvgContainer>
+      </Tooltip>
+      <SvgContainer>
+        <ThemeIcon
+          style={{ display: toggleTheme ? 'none' : 'block' }}
+          onClick={() => setToggleTheme(true)}
+        />
+      </SvgContainer>
+
+      <Collapse in={toggleTheme} orientation="horizontal">
+        <Stack direction={'column'} spacing={1}>
+          <Stack direction="row" spacing={1}>
+            {themes.map((theme, key) => (
+              <Tooltip
+                key={key}
+                title={theme.lightThemeName}
+                onClick={() => {
+                  selectTheme(theme.lightThemeName);
+                }}
+              >
+                <Stack
+                  height={'40px'}
+                  width={'40px'}
+                  borderRadius={'5px'}
+                  bgcolor={theme.lightTheme.palette?.primary?.main}
+                />
+              </Tooltip>
+            ))}
           </Stack>
-        )}
-      </Stack>
-    </>
+        </Stack>
+      </Collapse>
+    </Stack>
   );
 }
