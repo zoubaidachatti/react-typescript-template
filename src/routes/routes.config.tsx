@@ -1,4 +1,5 @@
 import { RouteIdEnum } from '@/config/enums';
+import DashboardLayout from '@/layouts/DashboardLayout';
 import NotFoundPage from '@/pages/NotFoundPage/NotFoundPage';
 import ProductsPage from '@/pages/ProductsPage/ProductsPage';
 import ViewProductPage from '@/pages/ViewProductPage/ViewProductPage';
@@ -18,6 +19,11 @@ export const RoutesConfig: RouteObject[] = [
   {
     path: RouteIdEnum.Products,
     element: <ProductsPage />,
+  },
+
+  {
+    path: RouteIdEnum.Dashboard,
+    element: <DashboardLayout />,
   },
   {
     path: RouteIdEnum.Product,

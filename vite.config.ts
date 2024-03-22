@@ -4,11 +4,13 @@ import checker from 'vite-plugin-checker';
 import path from 'path';
 // @ts-ignore
 import eslint from 'vite-plugin-eslint';
+import svgr from 'vite-plugin-svgr';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    svgr(),
     eslint(),
     checker({
       eslint: {

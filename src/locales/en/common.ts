@@ -1,4 +1,5 @@
 export const common = {
+  theme: 'Theme',
   confirm: 'Confirm',
   cancel: 'Cancel',
 
