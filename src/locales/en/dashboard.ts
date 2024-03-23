@@ -1,0 +1,38 @@
+export const dashboard = {
+  dashboard: 'Dashboard',
+  good_afternoon: 'Good afternoon ☀️',
+  good_evening: 'Good evening 🌆',
+  good_morning: 'Good morning 🌼',
+  good_night: 'Good night 🌙',
+  logout: 'Logout',
+  typographies: 'Typographies',
+  users: 'Users',
+  welcome_back: 'Welcome back {{name}}!',
+
+  theme: 'Theme',
+  colors: 'Colors',
+  components: 'Components',
+  base: 'Base',
+
+  buttons: 'Buttons',
+  charts: 'Charts',
+  forms: 'Forms',
+  notifications: 'Notifications',
+  extra: 'Extra',
+  pages: 'Pages',
+
+  cards: 'Cards',
+  carousel: 'Carousel',
+  pagination: 'Pagiation',
+
+  form_control: 'Form Control',
+  select: 'Select',
+  check_and_radio: 'Check & Radio',
+  range: 'Range',
+  input_group: 'Input Group',
+  validation: 'Validation',
+  alerts: 'Alerts',
+  badge: 'Badge',
+  modals: 'Modals',
+  toasts: 'Toasts',
+};

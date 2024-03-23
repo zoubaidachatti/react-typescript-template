@@ -1,8 +1,8 @@
 import DarkModeIcon from '@/assets/icons/dark-mode.svg?react';
 import LightModeIcon from '@/assets/icons/light-mode.svg?react';
 import ThemeIcon from '@/assets/icons/theme.svg?react';
+import { SVGContainer } from '@/components/SVGContainer/SVGContainer.style';
 import { themes } from '@/components/ThemeSelector/ThemeSelector.constants';
-import { SvgContainer } from '@/components/ThemeSelector/ThemeSelector.styles';
 import { AppModeEnum, AppThemeEnum } from '@/config/enums';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setTheme, switchMode } from '@/redux/slices/app/appSlice';
@@ -32,16 +32,16 @@ export default function ThemeSelector() {
         title={appMode === AppModeEnum.Dark ? AppModeEnum.Light : AppModeEnum.Dark}
         onClick={switchAppMode}
       >
-        <SvgContainer>
+        <SVGContainer>
           {appMode === AppModeEnum.Dark ? <LightModeIcon /> : <DarkModeIcon />}
-        </SvgContainer>
+        </SVGContainer>
       </Tooltip>
-      <SvgContainer>
+      <SVGContainer>
         <ThemeIcon
           style={{ display: toggleTheme ? 'none' : 'block' }}
           onClick={() => setToggleTheme(true)}
         />
-      </SvgContainer>
+      </SVGContainer>
 
       <Collapse in={toggleTheme} orientation="horizontal">
         <Stack direction={'column'} spacing={1}>

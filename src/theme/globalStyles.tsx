@@ -1,5 +1,5 @@
 import { GlobalStyles as GlobalThemeStyles } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
 
 export default function GlobalStyles() {
   const theme = useTheme();
@@ -9,6 +9,8 @@ export default function GlobalStyles() {
         body: {
           caretColor: theme.palette.primary.main,
           WebkitTapHighlightColor: 'transparent',
+          backgroundColor: theme.palette.grey[100],
+          overflowX: 'hidden',
         },
         '::selection': {
           color: theme.palette.common.white,
@@ -29,14 +31,14 @@ export default function GlobalStyles() {
         },
         ':hover::-webkit-scrollbar-thumb': {
           borderRadius: '7px',
-          background: theme.palette.primary.main,
+          background: alpha(theme.palette.primary.main, 0.3),
         },
         ':hover::-webkit-scrollbar-thumb:vertical': {
           borderRadius: '10x',
-          background: theme.palette.primary.main,
+          background: alpha(theme.palette.primary.main, 0.3),
         },
         ':hover::-webkit-scrollbar-track': {
-          backgroundColor: theme.palette.primary.light,
+          backgroundColor: alpha(theme.palette.primary.light, 0.2),
           borderRadius: '0px 0px 7px 7px',
         },
       }}
