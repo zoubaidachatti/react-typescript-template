@@ -11,7 +11,6 @@ export default function DashboardLayout() {
       <Stack height={'100%'} width={'100%'} direction={'column'}>
         <Navbar />
         <Stack
-          height={'1000px'}
           marginTop={OutletMargin.top}
           marginLeft={OutletMargin.left}
           width={{
