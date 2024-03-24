@@ -10,9 +10,9 @@ interface AuthState {
 
 const initialState: AuthState = {
   // TODO: get these values from an api or local storage.
-  firstName: 'Zoubaida',
-  lastName: 'CHATTI',
-  email: 'zchatti@email.com',
+  firstName: 'Malek',
+  lastName: 'MNERI',
+  email: 'malek@email.com',
   photo: 'https://api.dicebear.com/8.x/adventurer/svg',
 };
 
