@@ -1,5 +1,4 @@
 import ExpandLessIcon from '@/assets/icons/expand_less.svg?react';
-import ExpandMoreIcon from '@/assets/icons/expand_more.svg?react';
 import { TypographyOverflow } from '@/components/Typography/TypographyOverflow/TypographyOverflow';
 import { Collapse, Stack } from '@mui/material';
 import { isUndefined } from 'lodash';
@@ -23,7 +22,11 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
   };
 
   return (
-    <RootStyle onClick={onClick} spacing={isOpen ? 0.75 : 0}>
+    <RootStyle
+      onClick={onClick}
+      spacing={isOpen ? 0.75 : 0}
+      alignItems={{ xs: 'center', md: 'flex-start' }}
+    >
       <StyledStack
         spacing={0.75}
         direction={'row'}
@@ -33,26 +36,43 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
           width={{ xs: undefined, md: hasItems ? '80%' : '100%' }}
           spacing={1}
           direction={'row'}
+          alignItems={'center'}
         >
           <IconContainerStyle>{icon}</IconContainerStyle>
           <TypographyOverflow
             width={'74%'}
-            variant="h4"
+            fontWeight={600}
             title={t(label)}
             display={{ xs: 'none', md: 'block' }}
+            fontSize={'0.9rem'}
+            color={'primary.main'}
           >
             {t(label)}
           </TypographyOverflow>
         </Stack>
         {hasItems && (
-          <IconContainerStyle width={'20%'} display={{ xs: 'none', md: 'flex' }}>
-            {isOpen ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+          <IconContainerStyle
+            width={'20%'}
+            display={{ xs: 'none', md: 'flex' }}
+            alignItems={'flex-end'}
+          >
+            <ExpandLessIcon
+              style={{
+                transform: isOpen ? 'rotate(0)' : 'rotate(180deg)',
+                transition: '.2s linear',
+              }}
+            />
           </IconContainerStyle>
         )}
       </StyledStack>
       {hasItems && (
-        <Collapse in={isOpen}>
-          <Stack spacing={1} paddingInline={'4px'} onClick={(e) => e.stopPropagation()}>
+        <Collapse in={isOpen} sx={{ width: '100%' }}>
+          <Stack
+            width={'100%'}
+            spacing={1}
+            paddingInline={'4px'}
+            onClick={(e) => e.stopPropagation()}
+          >
             {items.map((item, ind) => (
               <SectionItems
                 key={item.name + ind}

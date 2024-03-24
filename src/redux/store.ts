@@ -1,9 +1,11 @@
 import { Action, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit';
-import appSlice from './slices/app/appSlice';
 import { productsApi } from './api/products/productsApi';
+import appSlice from './slices/app/appSlice';
+import authSlice from './slices/auth/authSlice';
 
 const rootReducer = combineReducers({
   appReducer: appSlice,
+  authReducer: authSlice,
   [productsApi.reducerPath]: productsApi.reducer,
 });
 

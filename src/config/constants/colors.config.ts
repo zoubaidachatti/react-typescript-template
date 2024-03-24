@@ -5,9 +5,9 @@ const divider = 'rgba(0, 0, 0, 0.12)';
 
 export const ColorsConfig: PaletteOptions = {
   primary: {
-    main: '#1976d2',
-    light: '#63a4ff',
-    dark: '#004ba0',
+    main: '#023e8a',
+    light: '#0077b6',
+    dark: '#03045e',
   },
   secondary: {
     main: '#dc004e',

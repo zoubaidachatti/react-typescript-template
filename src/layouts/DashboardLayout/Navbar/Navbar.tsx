@@ -1,12 +1,13 @@
 import ThemeSelector from '@/components/ThemeSelector/ThemeSelector';
 import { OutletMargin } from '@/layouts/DashboardLayout/DashboardLayout.constants';
+import { useAppSelector } from '@/redux/hooks';
 import { Avatar, Stack, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { AvatarSrc } from './Navbar.constants';
 import { generateTimeLabel } from './Navbar.helper';
 
 const Navbar = () => {
   const { t } = useTranslation();
+  const user = useAppSelector((state) => state.authReducer);
 
   return (
     <Stack
@@ -26,7 +27,7 @@ const Navbar = () => {
           <Typography variant="h2" fontSize={{ md: '1.5rem', xs: '1rem' }}>
             {t('dashboard.welcome_back', {
               // TODO - get from auth slice
-              name: 'Zoubaida',
+              name: user.firstName,
             })}
           </Typography>
           <Typography>{t(`dashboard.${generateTimeLabel()}`)}</Typography>
@@ -37,7 +38,7 @@ const Navbar = () => {
         <Avatar
           sx={(theme) => ({ bgcolor: theme.palette.primary.main })}
           variant="rounded"
-          src={AvatarSrc}
+          src={user.photo}
         />
       </Stack>
     </Stack>
