@@ -9,7 +9,7 @@ export default function GlobalStyles() {
         body: {
           caretColor: theme.palette.primary.main,
           WebkitTapHighlightColor: 'transparent',
-          backgroundColor: theme.palette.grey[100],
+          backgroundColor: theme.palette.grey[50],
           overflowX: 'hidden',
         },
         '::selection': {

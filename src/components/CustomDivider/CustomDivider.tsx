@@ -3,10 +3,10 @@ import { CustomDividerProps } from './CustomDividerProps.type';
 
 function CustomDivider({ orientation, color, width }: CustomDividerProps) {
   if (orientation === 'horizontal') {
-    return <HorizontalDivider color={color} width={width} />;
+    return <HorizontalDivider bgcolor={color} height={width ?? '2px'} />;
   }
 
-  return <VerticalDivider color={color} width={width} />;
+  return <VerticalDivider bgcolor={color} width={width ?? '2px'} />;
 }
 
 export default CustomDivider;

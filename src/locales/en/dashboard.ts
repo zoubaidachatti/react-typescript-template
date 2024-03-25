@@ -1,4 +1,5 @@
 export const dashboard = {
+  app_name: 'Untitled UI',
   dashboard: 'Dashboard',
   good_afternoon: 'Good afternoon ☀️',
   good_evening: 'Good evening 🌆',
