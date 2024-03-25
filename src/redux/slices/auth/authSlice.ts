@@ -1,4 +1,5 @@
 import { IUser } from '@/types/models/User';
+import { generateRandomString } from '@/utils/helpers/string.helpers';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface AuthState {
@@ -13,7 +14,7 @@ const initialState: AuthState = {
   firstName: 'Malek',
   lastName: 'MNERI',
   email: 'malek@email.com',
-  photo: 'https://api.dicebear.com/8.x/adventurer/svg',
+  photo: 'https://api.dicebear.com/8.x/adventurer/svg?seed=' + generateRandomString(),
 };
 
 const authSlice = createSlice({
