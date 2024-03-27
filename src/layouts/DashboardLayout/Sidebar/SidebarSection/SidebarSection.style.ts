@@ -8,7 +8,7 @@ export const RootStyle = styled(Stack)(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.primary.main, 0.2),
   },
-  transition: 'all .2s ease-in-out',
+  transition: 'background-color .2s ease-in-out',
 }));
 
 export const StyledStack = styled(Stack)(() => ({

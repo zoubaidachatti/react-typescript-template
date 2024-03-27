@@ -3,7 +3,6 @@ import { Stack, alpha, styled } from '@mui/material';
 export const RootStyle = styled(Stack)(({ theme }) => ({
   backgroundColor: theme.palette.grey[50],
   height: '100vh',
-  padding: '14px 12px',
   justifyContent: 'flex-end',
   position: 'fixed',
   top: 0,
@@ -22,4 +21,12 @@ export const StyledBox = styled(Stack)(({ theme }) => ({
     width: 30,
     height: 30,
   },
+}));
+
+export const StyledSidebarGroup = styled(Stack)(({ theme }) => ({
+  borderRadius: 7,
+  backgroundColor: alpha(theme.palette.primary.main, 0.2),
+  overflowY: 'auto',
+  padding: '12px',
+  marginInline: '12px !important',
 }));

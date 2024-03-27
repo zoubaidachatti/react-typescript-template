@@ -22,18 +22,10 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
   };
 
   return (
-    <RootStyle
-      onClick={onClick}
-      spacing={isOpen ? 0.75 : 0}
-      alignItems={{ xs: 'center', md: 'flex-start' }}
-    >
-      <StyledStack
-        spacing={0.75}
-        direction={'row'}
-        justifyContent={{ xs: 'center', md: 'flex-start' }}
-      >
+    <RootStyle onClick={onClick} spacing={isOpen ? 0.75 : 0} alignItems={'flex-start'}>
+      <StyledStack spacing={0.75} direction={'row'} justifyContent={'flex-start'}>
         <Stack
-          width={{ xs: undefined, md: hasItems ? '80%' : '100%' }}
+          width={hasItems ? '80%' : '100%'}
           spacing={1}
           direction={'row'}
           alignItems={'center'}
@@ -43,7 +35,6 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
             width={'74%'}
             fontWeight={600}
             title={t(label)}
-            display={{ xs: 'none', md: 'block' }}
             fontSize={'0.9rem'}
             color={'primary.main'}
           >
@@ -51,15 +42,11 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
           </TypographyOverflow>
         </Stack>
         {hasItems && (
-          <IconContainerStyle
-            width={'20%'}
-            display={{ xs: 'none', md: 'flex' }}
-            alignItems={'flex-end'}
-          >
+          <IconContainerStyle width={'20%'} alignItems={'flex-end'}>
             <ExpandLessIcon
               style={{
                 transform: isOpen ? 'rotate(0)' : 'rotate(180deg)',
-                transition: '.2s linear',
+                transition: 'transform .2s linear',
               }}
             />
           </IconContainerStyle>

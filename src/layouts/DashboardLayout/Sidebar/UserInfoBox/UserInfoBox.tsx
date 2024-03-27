@@ -10,17 +10,12 @@ function UserInfoBox() {
   const user = useAppSelector((state) => state.authReducer);
   return (
     <StyledBox padding={'10px 5px'} height={65} position={'relative'}>
-      <SVGBox display={{ xs: 'none', md: 'flex' }}>
+      <SVGBox>
         <MoreIcon />
       </SVGBox>
-      <Stack
-        direction={'row'}
-        width={'100%'}
-        alignItems="center"
-        justifyContent={{ xs: 'center', md: 'flex-start' }}
-      >
+      <Stack direction={'row'} width={'100%'} alignItems="center" justifyContent={'flex-start'}>
         <Avatar sx={{ bgcolor: primaryMain }} src={user.photo} />
-        <Stack display={{ xs: 'none', md: 'flex' }} marginLeft={0.75}>
+        <Stack marginLeft={0.75}>
           <Typography
             fontWeight={600}
             fontSize={'0.8rem'}
