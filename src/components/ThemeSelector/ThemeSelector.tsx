@@ -1,6 +1,5 @@
-import DarkModeIcon from '@/assets/icons/dark-mode.svg?react';
-import LightModeIcon from '@/assets/icons/light-mode.svg?react';
 import ThemeIcon from '@/assets/icons/theme.svg?react';
+import CustomModeSwitch from '@/components/CustomSwitch/CustomModeSwitch/CustomModeSwitch';
 import { SVGContainer } from '@/components/SVGContainer/SVGContainer.style';
 import { themes } from '@/components/ThemeSelector/ThemeSelector.constants';
 import { AppModeEnum, AppThemeEnum } from '@/config/enums';
@@ -28,21 +27,13 @@ export default function ThemeSelector() {
 
   return (
     <Stack direction="row" marginLeft={'auto'} alignItems={'center'} spacing={1}>
-      <Tooltip
-        title={appMode === AppModeEnum.Dark ? AppModeEnum.Light : AppModeEnum.Dark}
-        onClick={switchAppMode}
-      >
-        <SVGContainer>
-          {appMode === AppModeEnum.Dark ? <LightModeIcon /> : <DarkModeIcon />}
-        </SVGContainer>
-      </Tooltip>
+      <CustomModeSwitch isDark={appMode === AppModeEnum.Dark} toggle={switchAppMode} />
       <SVGContainer>
         <ThemeIcon
           style={{ display: toggleTheme ? 'none' : 'block' }}
           onClick={() => setToggleTheme(true)}
         />
       </SVGContainer>
-
       <Collapse in={toggleTheme} orientation="horizontal">
         <Stack direction={'column'} spacing={1}>
           <Stack direction="row" spacing={1}>
