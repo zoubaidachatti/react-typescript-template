@@ -12,6 +12,7 @@ export const RootStyle = styled(Stack)(() => ({ isdark }: { isdark: string }) =>
       : (ColorsConfig.info as SimplePaletteColorOptions).light,
   position: 'relative',
   overflow: 'hidden',
+  transform: 'scale(1.3) translateX(-5px)',
   transition: 'background-color ease-in 300ms',
 }));
 
