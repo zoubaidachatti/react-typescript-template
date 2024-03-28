@@ -60,12 +60,12 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
             </TypographyOverflow>
           </Stack>
           <StyledSidebarGroup spacing={2}>
-            {SidebarGroups.map(({ title, sections }, groupIndex) => (
+            {SidebarGroups.map(({ label, sections }, groupIndex) => (
               <Stack key={`group${groupIndex}`} spacing={1} alignItems={'start'}>
-                {title && (
+                {label && (
                   <>
                     <Typography color={primaryMain} fontWeight={600} variant="body2">
-                      {t(title)}
+                      {t(label)}
                     </Typography>
                     <CustomDivider
                       orientation="horizontal"
@@ -77,7 +77,7 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
                 <Stack width="100%" spacing={1}>
                   {sections.map((groupSection, groupSectionIndex) => (
                     <SidebarSection
-                      label={groupSection.name}
+                      label={groupSection.label}
                       icon={groupSection.icon}
                       items={groupSection.items}
                       path={groupSection.path}
