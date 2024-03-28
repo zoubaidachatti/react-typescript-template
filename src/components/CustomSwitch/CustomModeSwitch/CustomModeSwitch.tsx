@@ -5,6 +5,7 @@ import FourPointsStars from './FourPointsStars/FourPointsStars';
 const CustomModeSwitch = ({ isDark, toggle }: { isDark: boolean; toggle: () => void }) => {
   return (
     <RootStyle
+      isdark={`${isDark}`}
       justifyContent={'center'}
       onClick={toggle}
       alignItems={isDark ? 'flex-start' : 'flex-end'}

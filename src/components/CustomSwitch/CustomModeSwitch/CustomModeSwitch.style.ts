@@ -1,14 +1,18 @@
 import { ColorsConfig } from '@/config/constants';
-import { Stack, styled } from '@mui/material';
+import { SimplePaletteColorOptions, Stack, styled } from '@mui/material';
 
-export const RootStyle = styled(Stack)(({ theme }) => ({
+export const RootStyle = styled(Stack)(() => ({ isdark }: { isdark: string }) => ({
   borderRadius: 42,
   width: 36,
   height: 20,
   cursor: 'pointer',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor:
+    isdark === `${true}`
+      ? (ColorsConfig.primary as SimplePaletteColorOptions).dark
+      : (ColorsConfig.info as SimplePaletteColorOptions).light,
   position: 'relative',
   overflow: 'hidden',
+  transition: 'background-color ease-in 300ms',
 }));
 
 export const StyledStack = styled(Stack)(() => ({ transform }: { transform: string }) => ({
