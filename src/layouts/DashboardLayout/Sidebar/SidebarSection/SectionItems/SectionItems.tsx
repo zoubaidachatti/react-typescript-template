@@ -14,7 +14,7 @@ const SectionItems = ({ name, path, icon }: { path: string; name: string; icon: 
   return (
     <RootStyle onClick={onClick} direction={'row'} spacing={1} alignItems={'center'}>
       <IconContainerStyle>{icon}</IconContainerStyle>
-      <Typography color={'primary.main'} display={{ xs: 'none', md: 'block' }} fontSize={'0.85rem'}>
+      <Typography color={'primary.main'} fontSize={'0.85rem'}>
         {t(name)}
       </Typography>
     </RootStyle>

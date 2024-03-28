@@ -139,11 +139,7 @@ export const OceanBlueColorsConfig: PaletteOptions = {
 
 export const OceanBlueDarkColorsConfig: PaletteOptions = {
   ...DarkModeColorsConfig,
-  primary: {
-    main: '#003B5C',
-    light: '#195587',
-    dark: '#001F2F',
-  },
+  primary: OceanBlueColorsConfig.primary,
 };
 
 export const MidnightPurpleColorsConfig: PaletteOptions = {
@@ -157,11 +153,7 @@ export const MidnightPurpleColorsConfig: PaletteOptions = {
 
 export const MidnightPurpleDarkColorsConfig: PaletteOptions = {
   ...DarkModeColorsConfig,
-  primary: {
-    main: '#380456',
-    light: '#5F1A7D',
-    dark: '#1A002C',
-  },
+  primary: MidnightPurpleColorsConfig.primary,
 };
 
 export const ForestGreenColorsConfig: PaletteOptions = {
@@ -175,11 +167,7 @@ export const ForestGreenColorsConfig: PaletteOptions = {
 
 export const ForestGreenDarkColorsConfig: PaletteOptions = {
   ...DarkModeColorsConfig,
-  primary: {
-    main: '#004000',
-    light: '#0B6C0B',
-    dark: '#002100',
-  },
+  primary: ForestGreenColorsConfig.primary,
 };
 
 export const SunsetRedColorsConfig: PaletteOptions = {
@@ -193,11 +181,7 @@ export const SunsetRedColorsConfig: PaletteOptions = {
 
 export const SunsetRedDarkColorsConfig: PaletteOptions = {
   ...DarkModeColorsConfig,
-  primary: {
-    main: '#8B0000',
-    light: '#B22222',
-    dark: '#800000',
-  },
+  primary: SunsetRedColorsConfig.primary,
 };
 
 export const RoyalGoldColorsConfig: PaletteOptions = {
@@ -211,9 +195,5 @@ export const RoyalGoldColorsConfig: PaletteOptions = {
 
 export const RoyalGoldDarkColorsConfig: PaletteOptions = {
   ...DarkModeColorsConfig,
-  primary: {
-    main: '#B8860B',
-    light: '#D2B48C',
-    dark: '#8B4513',
-  },
+  primary: RoyalGoldColorsConfig.primary,
 };
