@@ -62,10 +62,10 @@ const SidebarSection = ({ label, icon, items }: SidebarSectionProps) => {
           >
             {items.map((item, ind) => (
               <SectionItems
-                key={item.name + ind}
+                key={item.label + ind}
                 icon={item.icon}
                 path={item.path}
-                name={item.name}
+                label={item.label}
               />
             ))}
           </Stack>

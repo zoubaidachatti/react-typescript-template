@@ -28,12 +28,12 @@ import { ISidebarGroup } from '@/types/interfaces';
 
 const theme = [
   {
-    name: 'dashboard.colors',
+    label: 'dashboard.colors',
     path: '/dashboard/colors',
     icon: <ColorsIcon />,
   },
   {
-    name: 'dashboard.typographies',
+    label: 'dashboard.typographies',
     path: '/dashboard/typographies',
     icon: <TypographyIcon />,
   },
@@ -41,77 +41,77 @@ const theme = [
 
 const components = [
   {
-    name: 'dashboard.base',
+    label: 'dashboard.base',
     path: '/dashboard/base',
     icon: <PuzzleIcon />,
     items: [
       // TODO - add more
-      { name: 'dashboard.cards', path: '/dashboard/base/cards', icon: <CardIcon /> },
-      { name: 'dashboard.carousel', path: '/dashboard/base/carousel', icon: <CarouselIcon /> },
+      { label: 'dashboard.cards', path: '/dashboard/base/cards', icon: <CardIcon /> },
+      { label: 'dashboard.carousel', path: '/dashboard/base/carousel', icon: <CarouselIcon /> },
       {
-        name: 'dashboard.pagination',
+        label: 'dashboard.pagination',
         path: '/dashboard/base/pagination',
         icon: <PaginationIcon />,
       },
     ],
   },
   {
-    name: 'dashboard.buttons',
+    label: 'dashboard.buttons',
     path: '/dashboard/buttons',
     icon: <ButtonIcon />,
   },
   {
-    name: 'dashboard.charts',
+    label: 'dashboard.charts',
     path: '/dashboard/charts',
     icon: <ChartIcon />,
   },
   {
-    name: 'dashboard.forms',
+    label: 'dashboard.forms',
     path: '/dashboard/forms',
     icon: <FormIcon />,
     items: [
       {
-        name: 'dashboard.form_control',
+        label: 'dashboard.form_control',
         path: '/dashboard/forms/form_control',
         icon: <FormIcon />,
       },
-      { name: 'dashboard.select', path: '/dashboard/forms/select', icon: <SelectIcon /> },
+      { label: 'dashboard.select', path: '/dashboard/forms/select', icon: <SelectIcon /> },
       {
-        name: 'dashboard.check_and_radio',
+        label: 'dashboard.check_and_radio',
         path: '/dashboard/forms/check_and_radio',
         icon: <CheckIcon />,
       },
-      { name: 'dashboard.range', path: '/dashboard/forms/range', icon: <RangeIcon /> },
+      { label: 'dashboard.range', path: '/dashboard/forms/range', icon: <RangeIcon /> },
       {
-        name: 'dashboard.input_group',
+        label: 'dashboard.input_group',
         path: '/dashboard/forms/input_group',
         icon: <InputGroupIcon />,
       },
-      { name: 'dashboard.validation', path: '/dashboard/forms/validation', icon: <SubmitIcon /> },
+      { label: 'dashboard.validation', path: '/dashboard/forms/validation', icon: <SubmitIcon /> },
     ],
   },
   {
-    name: 'dashboard.notifications',
+    label: 'dashboard.notifications',
     path: '/dashboard/notifications',
     icon: <NotificationIcon />,
     items: [
       {
-        name: 'dashboard.alerts',
+        label: 'dashboard.alerts',
         path: '/dashboard/notifications/alerts',
         icon: <AlertIcon />,
       },
       {
-        name: 'dashboard.badge',
+        label: 'dashboard.badge',
         path: '/dashboard/notifications/badge',
         icon: <BadgeIcon />,
       },
       {
-        name: 'dashboard.modals',
+        label: 'dashboard.modals',
         path: '/dashboard/notifications/modals',
         icon: <ModalIcon />,
       },
       {
-        name: 'dashboard.toasts',
+        label: 'dashboard.toasts',
         path: '/dashboard/notifications/toasts',
         icon: <ToastIcon />,
       },
@@ -121,14 +121,14 @@ const components = [
 
 const extras = [
   {
-    name: 'dashboard.pages',
+    label: 'dashboard.pages',
     path: '/dashboard/pages',
     icon: <PagesIcon />,
     items: [
-      { name: 'auth.login', path: '/login', icon: <LoginIcon /> },
-      { name: 'auth.register', path: '/register', icon: <RegisterIcon /> },
-      { name: 'error.error404', path: '/not_found', icon: <ErrorIcon /> },
-      { name: 'error.error500', path: '/internal_server_error', icon: <ErrorIcon /> },
+      { label: 'auth.login', path: '/login', icon: <LoginIcon /> },
+      { label: 'auth.register', path: '/register', icon: <RegisterIcon /> },
+      { label: 'error.error404', path: '/not_found', icon: <ErrorIcon /> },
+      { label: 'error.error500', path: '/internal_server_error', icon: <ErrorIcon /> },
     ],
   },
 ];
@@ -137,13 +137,13 @@ export const SidebarGroups: ISidebarGroup[] = [
   {
     sections: [
       {
-        name: 'dashboard.dashboard',
+        label: 'dashboard.dashboard',
         path: '/dashboard/home',
         icon: <DashboardIcon />,
       },
     ],
   },
-  { title: 'dashboard.theme', sections: theme },
-  { title: 'dashboard.components', sections: components },
-  { title: 'dashboard.extra', sections: extras },
+  { label: 'dashboard.theme', sections: theme },
+  { label: 'dashboard.components', sections: components },
+  { label: 'dashboard.extra', sections: extras },
 ];
